@@ -1,0 +1,79 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Jugo de Zanahoria",
+      "precio": "31111"
+    },
+    {
+      "id": 2,
+      "nombre": "Jugo de Naranja",
+      "precio": "1"
+    },
+    {
+      "nombre": "Jugo de Naranja",
+      "precio": "300",
+      "id": 3
+    },
+    {
+      "nombre": "Rib Eye 800g",
+      "precio": "200",
+      "id": 4
+    },
+    {
+      "nombre": "Jugo de Fresa",
+      "precio": "200",
+      "id": 5
+    },
+    {
+      "nombre": "zapatos",
+      "precio": 200,
+      "id": 6
+    },
+    {
+      "nombre": "",
+      "precio": 0,
+      "id": 7
+    },
+    {
+      "nombre": "Perros",
+      "precio": 200,
+      "id": 8
+    },
+    {
+      "nombre": "Camisa",
+      "precio": 300,
+      "id": 9
+    },
+    {
+      "nombre": "camisas",
+      "precio": 200,
+      "id": 10
+    },
+    {
+      "nombre": "Camarones",
+      "precio": 3,
+      "id": 11
+    },
+    {
+      "nombre": "Camarones",
+      "precio": 3,
+      "id": 12
+    },
+    {
+      "nombre": "Camarones",
+      "precio": 3,
+      "id": 13
+    },
+    {
+      "nombre": "Camarones",
+      "precio": 3,
+      "id": 14
+    },
+    {
+      "nombre": "Camarones",
+      "precio": 100,
+      "id": 15
+    }
+  ]
+}
