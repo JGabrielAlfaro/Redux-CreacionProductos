@@ -157,8 +157,9 @@ export function editarProductoAction (producto){
         dispatch(editarProducto())
 
         try {
+           
             const resultado = await clienteAxios.put(`/productos/${producto.id}`, producto)
-            // console.log(resultado)
+            //  console.log(resultado)
             dispatch(editarProductoExito(producto))
         } catch (error) {
             console.log(error)
@@ -168,7 +169,6 @@ export function editarProductoAction (producto){
 }
 const editarProducto = ()=>({
     type: COMENZAR_EDICION_PRODUCTO,
-
 })
 
 const editarProductoExito =(producto) => ({

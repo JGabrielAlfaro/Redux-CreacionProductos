@@ -24,7 +24,7 @@ const EditarProducto = () => {
     setProducto(productoeditar)
   },[productoeditar])
   
-  const {nombre,precio,id} = producto;
+  const {nombre,precio} = producto;
 
   //Leer datos del formulario
   const onChangeFormulario = e => {
