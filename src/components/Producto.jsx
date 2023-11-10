@@ -1,4 +1,4 @@
-import { Link,useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 //Redux
 import { useDispatch } from "react-redux"
@@ -38,6 +38,7 @@ const Producto = ({producto}) => {
 
   return (
     <tr>
+  
        <td>{nombre}</td>
        <td><span className="font-font-weight-bold">$ {precio}</span></td>
        <td className="acciones">

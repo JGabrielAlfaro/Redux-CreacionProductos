@@ -46,18 +46,19 @@ export default function Productos() {
           </tr>
         </thead>
         <tbody>
-          {productos.length === 0 ? (
-            <tr>
-              <td colSpan="3">No hay productos</td>
-            </tr>
-          ) : (
-            productos.map(p => (
-              <Producto
-                key={p.id}
-                producto={p}
-              />
-            ))
-          )}
+            { productos.length > 0 ?
+              (
+                productos.map(p => (
+                  <Producto key={p.id} producto={p} />
+                ))
+              )
+            :
+              (
+                <tr key={'0'}>
+                  <td colSpan="3">No hay productos</td>
+                </tr>
+              ) 
+            }
         </tbody>
       </table>
     </>

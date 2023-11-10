@@ -2,7 +2,7 @@
   "productos": [
     {
       "nombre": "Jugo de Naranja",
-      "precio": "40",
+      "precio": "70",
       "id": 3
     },
     {
@@ -29,6 +29,21 @@
       "nombre": "Camisa",
       "precio": 300,
       "id": 9
+    },
+    {
+      "nombre": "test",
+      "precio": 200,
+      "id": 10
+    },
+    {
+      "nombre": "test2",
+      "precio": "23",
+      "id": 11
+    },
+    {
+      "nombre": "Luis",
+      "precio": 200,
+      "id": 12
     }
   ]
 }

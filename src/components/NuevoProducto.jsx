@@ -1,9 +1,11 @@
 import {useState} from 'react'
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
 
 // Actions de Redux
-import { useDispatch, useSelector } from 'react-redux'
 import {crearNuevoProductoAction} from '../actions/productoAction'
-import { useNavigate } from "react-router-dom";
+import {mostrarAlerta,ocultarAlertaAction} from '../actions/alertaAction'
+
 
 const NuevoProducto = () => {
 
@@ -21,28 +23,38 @@ const NuevoProducto = () => {
   const cargando = useSelector((state) => state.productos.loading)
   //  console.log(cargando)
   const error = useSelector(state => state.productos.error)
+  const alerta = useSelector(state => state.alerta.alerta)
 
   //manda a llamar el action de productoAction
   const agregarProducto = (producto)=> dispatch(crearNuevoProductoAction(producto))
 
   //Cuando el usuario haga submit
   const submitNuevoProducto = (e) => {
-    e.preventDefault();
-    //Validar formulario
-    if ([nombre,precio].includes('') === ''){
-      return;
-    }
+      e.preventDefault();
+   
+      //Validar formulario
+      if ([nombre,precio].includes('')){
 
-    //sino hay errores
+        const alerta = {
+          msg: 'Ambos campos son obligatorios',
+          clases: 'alert alert-danger text-center text-uppercase p3'
+        }
+        dispatch(mostrarAlerta(alerta));
+        return;
+      }
 
-    // crear nuevo proudcto
-    agregarProducto({
-      nombre,
-      precio
-    });
-    //Redireccionamos.
-    navigate("/");
+      //sino hay errores
+      dispatch(ocultarAlertaAction())
+
+      // crear nuevo proudcto
+      agregarProducto({
+        nombre,
+        precio
+      });
+      //Redireccionamos.
+      navigate("/");
   }
+
   return (
     <div className='row justify-content-center'>
       <div className='col-md-8'>
@@ -51,6 +63,9 @@ const NuevoProducto = () => {
                   <h2 className='text-center mb-4 font-weight-bold'>
                       Agregar Nuevo Producto
                   </h2>
+                  {
+                    alerta ? <p className={alerta.clases}>{alerta.msg}</p> : null
+                  }
                   <form
                     onSubmit={submitNuevoProducto}
                   >

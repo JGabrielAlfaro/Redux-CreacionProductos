@@ -23,16 +23,17 @@ import Swal from 'sweetalert2'
 //*************************CREAR LOS PRODUCTOS*********************************
 export function crearNuevoProductoAction(producto){
     return async (dispatch)=>{
-        dispatch( agregarProducto() );
 
+        dispatch( agregarProducto() );
+       
         try {
             // insertar en la API
-            await clienteAxios.post('/productos',producto)
-            
+            const {data} = await clienteAxios.post('/productos',producto)
+            producto=data;
 
             //Si todo sale bien, actualizar el state
             dispatch(agregarProductoExito(producto));
-
+            
             //Alerta
             Swal.fire(
                 'Correcto',
@@ -161,7 +162,7 @@ export function editarProductoAction (producto){
             // console.log(resultado)
             dispatch(editarProductoExito(producto))
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             dispatch(editarProductoError(true))
         }
     }
@@ -177,6 +178,6 @@ const editarProductoExito =(producto) => ({
 })
 
 const editarProductoError = (estado) => ({
-    type: PRODUCTO_ELIMINADO_ERROR,
+    type: PRODUCTO_EDITADO_ERROR,
     payload: estado
 })
